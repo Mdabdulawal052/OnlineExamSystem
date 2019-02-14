@@ -1,0 +1,38 @@
+﻿@model ExamSystemModel.Models.Course
+@{
+    ViewBag.Title = "CourseName";
+    Layout = "";
+}
+
+<div class="container">
+
+    <div class="form-group col-md-8 ml-3">
+        @Html.LabelFor(c => c.Organizationid, htmlAttributes: new {@class = ""})
+        @*@Html.DropDownListFor(c => c.Organizationid, new SelectListItem { "Name", "Id" }, "---------Select Organization-------", new { @class = "form-control" })*@
+        @Html.TextBoxFor(c => c.Organizationid, null, new {@readonly = "readonly", @class = "form-control ", @id = "BasicInfoOrganizationId"})
+    </div>
+
+    <div class="form-group col-md-8 ml-3">
+        @Html.LabelFor(c => c.Name, htmlAttributes: new {@class = ""})
+        @Html.TextBoxFor(c => c.Name, null, new {@readonly = "readonly", @class = "form-control "})
+    </div>
+    <div class="form-group col-md-8 ml-3">
+        @Html.LabelFor(c => c.Code, htmlAttributes: new {@class = ""})
+        @Html.TextBoxFor(c => c.Code, null, new {@readonly = "readonly", @class = "form-control "})
+    </div>
+    <div class="form-group col-md-8 ml-3">
+        @Html.LabelFor(c => c.CourseDuration, htmlAttributes: new {@class = ""})
+        @Html.TextBoxFor(c => c.CourseDuration, null, new {@readonly = "readonly", @class = "form-control"})
+    </div>
+    <div class="form-group col-md-8 ml-3">
+        @Html.LabelFor(c => c.Credit, htmlAttributes: new {@class = ""})
+        @Html.TextBoxFor(c => c.Credit, null, new {@readonly = "readonly", @class = "form-control"})
+    </div>
+    <div class="form-group col-md-8 ml-3">
+        @Html.LabelFor(c => c.OutLine, htmlAttributes: new {@class = ""})
+        @Html.TextAreaFor(c => c.OutLine, new {@readonly = "readonly", @class = "form-control", @rows = "4"})
+    </div>
+
+
+
+</div>

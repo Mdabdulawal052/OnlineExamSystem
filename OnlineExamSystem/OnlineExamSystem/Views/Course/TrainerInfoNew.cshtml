@@ -1,0 +1,36 @@
+﻿@model OnlineExamSystem.Models.TrainerCreateForPV
+@{
+    Layout = null;
+}
+
+<div class="">
+    <table class="table  table-hover mt-5 pt-5">
+        <thead class="table-primary">
+            <tr>
+                <th>Name</th>
+                <th>ContactNo</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.TrainerList != null && Model.TrainerList.Count > 0)
+            {
+                foreach (var org in Model.TrainerList)
+                {
+                    <tr>
+                        <td>@org.Name</td>
+                        <td>@org.ContactNo</td>
+                        <td>@org.Email</td>
+                        <td>@org.City</td>
+                        <td>@org.Country</td>
+                    </tr>
+                }
+            }
+
+
+        </tbody>
+    </table>
+</div>
+

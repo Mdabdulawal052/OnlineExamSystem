@@ -1,0 +1,7 @@
+﻿ul.nav.nav-tabs li:not(.active) a {
+    background-color:#eeeeee;
+    color:white;
+}
+ul.nav.nav-tabs li.active a {
+    border-top:3px solid #16a765;
+}

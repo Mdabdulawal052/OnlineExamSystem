@@ -1,0 +1,62 @@
+﻿@model OnlineExamSystem.Models.CourseCreateForView
+
+@{
+    Layout = null;
+}
+
+
+
+
+
+<div class="container ">
+    <h2>BasicInfo</h2>
+    @using (Html.BeginForm())
+    {
+        <div class="form row">
+
+
+            <div class="form-group col-md-8 ml-3">
+                @Html.LabelFor(c => c.Organizationid, htmlAttributes: new { @class = "" })
+                @Html.DropDownListFor(model => model.Organizationid, ViewBag.OrganizationList as SelectList, "--Select--", new { @class = "form-control" })
+            </div>
+
+            <div class="form-group col-md-8 ml-3">
+                @Html.LabelFor(c => c.Name, htmlAttributes: new { @class = "" })
+                @Html.TextBoxFor(c => c.Name, null, new { @class = "form-control " })
+            </div>
+            <div class="form-group col-md-8 ml-3">
+                @Html.LabelFor(c => c.Code, htmlAttributes: new { @class = "" })
+                @Html.TextBoxFor(c => c.Code, null, new { @class = "form-control " })
+            </div>
+            <div class="form-group col-md-8 ml-3">
+                @Html.LabelFor(c => c.CourseDuration, htmlAttributes: new { @class = "" })
+                @Html.TextBoxFor(c => c.CourseDuration, null, new { @class = "form-control" })
+            </div>
+            <div class="form-group col-md-8 ml-3">
+                @Html.LabelFor(c => c.Credit, htmlAttributes: new { @class = "" })
+                @Html.TextBoxFor(c => c.Credit, null, new { @class = "form-control" })
+            </div>
+            <div class="form-group col-md-8 ml-3">
+                @Html.LabelFor(c => c.OutLine, htmlAttributes: new { @class = "" })
+                @Html.TextAreaFor(c => c.OutLine, new { @class = "form-control", @rows = "4" })
+            </div>
+
+            @Html.HiddenFor(c => c.Id, htmlAttributes: new { @id = "BasicId" })
+            <div class="col-md-8 ml-3">
+
+                <button type="submit" id="basicCourseSubmitbtn" class="btn btn-primary btn-lg active ">Update</button>
+            </div>
+        </div>
+
+    }
+    @if (ViewBag.Smsg != null)
+    {
+        <h4 style="color: green; font-weight: bold">@ViewBag.SMsg</h4>
+    }
+    @if (ViewBag.Emsg != null)
+    {
+        <h4 style="color: red; font-weight: bold">@ViewBag.EMsg</h4>
+    }
+</div>
+
+

@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "BatchInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BatchInfo</h2>
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#batchInfoFor" >BatchNo</a></li>
+    <li><a data-toggle="tab" href="#AssignParticipantFor" id="AssignParticipant">AssignParticipant</a></li>
+    <li><a data-toggle="tab" href="#AssignTrainerFor" id="AssignTrainer">AssignTrainer</a></li>
+    <li><a data-toggle="tab" href="#createExamFor" id="createExam">CreateExam</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="batchInfoFor" class="tab-pane fade in active">
+        @Html.Action("BatchNo")
+    </div>
+    <div id="AssignParticipantFor" class="tab-pane fade in ">
+        @Html.Partial("Batch/_batchAssignParticipant")
+        
+        <div id="AssParticipantdiv"></div>
+    </div>
+    <div id="AssignTrainerFor" class="tab-pane fade in ">
+        @Html.Partial("Batch/_batchAssignTrainer")
+        <div id="AssTrainerdiv"></div>
+    </div>
+    <div id="createExamFor" class="tab-pane fade in ">
+        @Html.Partial("Batch/_ExamSchedule")
+        <div id="Creatediv"></div>
+    </div>
+</div>
+
+
+
+@section Styles
+{
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" /> 
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.datetimepicker.min.css" rel="stylesheet" />
+
+}
+@section Scripts
+{
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Content/jquery.datetimepicker.full.js"></script>
+    
+    <script src="~/Scripts/BatchEntry/AssignTrainerParticipant.js"></script>
+    <script src="~/Scripts/BatchEntry/BatchEntry.js"></script>
+    
+}

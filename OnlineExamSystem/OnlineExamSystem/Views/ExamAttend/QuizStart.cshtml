@@ -1,0 +1,24 @@
+﻿@model OnlineExamSystem.Models.QuestionCreateForView
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_layoutUser.cshtml";
+}
+
+
+    @using (Html.BeginForm("QuizStart", "ExamAttend"))
+    {
+        <div class="container">
+            <h2 style="color:forestgreen">Exam Start</h2>
+            @Model.QuestionOrder<h4>@Model.WriteQuestion</h4>
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <input type="hidden" name="Marks" value="@Model.Marks" />
+           
+            @for (int j=0; j< Model.QOptions.Count();j++)
+            {
+                <h4>@Html.RadioButton("QuestionId", Model.QOptions[j].Id)
+                @Model.QOptions[j].Option</h4>
+            }
+            <input type="submit" class="btn btn-success" value="Next" />
+        </div>
+    }
+

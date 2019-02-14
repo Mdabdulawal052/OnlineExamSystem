@@ -1,0 +1,118 @@
+﻿@model OnlineExamSystem.Models.TrainerCreateForPV
+
+@{
+    ViewBag.Title = "AssignTrainer";
+    Layout = "";
+}
+
+<h2>AssignTrainer</h2>
+
+@using (Ajax.BeginForm("TrainerAss", "Batch", new AjaxOptions()
+{
+    HttpMethod = "POST"
+}))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+
+                @Html.DropDownListFor(c => c.TrainerId, null, "..Select..", new { @class = "form-control col-md-5 " })
+                <button type="button" id="btnTrainerCreate" class="btn btn-primary btn-lg active "><i class="fa fa-plus"></i></button>
+                <input type="submit" id="BatchAssingTrainerId" class="btn btn-success ml-3" value="Add" />
+                <div class="ml-3">
+                    @Html.LabelFor(c => c.Lead, htmlAttributes: new { @class = "" })
+                    @*@Html.CheckBox("lead",true)*@
+                    <input type="checkbox" checked="checked" name="Lead" value="true" />
+                    @*@Html.CheckBoxFor(c => c.Lead, new { @checked = "checked"})*@
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="form-group">
+
+
+
+            </div>
+        </div>
+    </div>
+}
+<div class="modal fade" id="TrainerEntryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabe">Create Trainer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+
+            </div>
+            <div class="modal-body ">
+
+
+                <div id="partialTrainerAdd"></div>
+
+                <div style="text-align: center; display: none" id="loderdiv">
+                    <img src="~/Content/InternetSlowdown_Day.gif" width="150" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@if (ViewBag.SMsg != null)
+{
+    <script type="text/javascript">
+        alert(@Html.Raw(Json.Encode(ViewBag.SuMsg)));
+    </script>
+}
+@if (ViewBag.EMsg != null)
+{
+    <script type="text/javascript">
+        alert(@Html.Raw(Json.Encode(ViewBag.ErMsg)));
+    </script>
+}
+<div class="">
+    <table class="table  table-hover mt-5 pt-5 " id="tainertb">
+        <thead class="table-primary">
+            <tr>
+                <th>Name</th>
+                <th>LeadTriner</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody id="TrainerTable">
+            <tr style='display:none'></tr>
+            @*&& Model.TrainerCourseAssList.Count() > 0*@
+            @if (Model != null && Model.TrainerCourseAssList != null)
+            {
+                foreach (var org in Model.TrainerCourseAssList)
+                {
+                    <tr>
+
+                        <td>@org.TrinerName</td>
+                        <td>@org.LeadTrainer</td>
+
+
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+
+@section Scripts
+{
+    @*<script src="~/Scripts/CourseInfo/AssignTrainer.js"></script>*@
+    @*<script type="text/javascript">
+            $(document).ready(function() {
+
+            });
+
+        </script>*@
+}

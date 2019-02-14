@@ -1,0 +1,6 @@
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemModel\bin\Debug\ExamSystemModel.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemModel\bin\Debug\ExamSystemModel.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemModel\obj\Debug\ExamSystemModel.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemModel\obj\Debug\ExamSystemModel.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemModel\obj\Debug\ExamSystemModel.csprojAssemblyReference.cache
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemModel\obj\Debug\ExamSystemModel.csproj.CoreCompileInputs.cache

@@ -1,0 +1,63 @@
+﻿
+@model OnlineExamSystem.Models.ParticipantCreateForView
+
+
+@using (Ajax.BeginForm("ParticipantASS", "Batch", new AjaxOptions()
+{
+    HttpMethod = "POST"
+}))
+{
+@*<form id="BatchParticipantForm">*@
+    <div class="row mt-5 pt-3">
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.DropDownListFor(c => c.Id, null, "..Select..", new { @class = "form-control col-md-5", id = "AssParticipantId" })
+                <button type="button" id="btnNew" class="btn btn-primary btn-lg active "><i class="fa fa-plus"></i></button>
+                <input type="submit" id="BatchAssingParticipantId" class="btn btn-success ml-3" value="Add" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+
+                
+
+            </div>
+        </div>
+    </div>
+@*</form>*@
+ } 
+
+<div class="">
+    <table class="table  table-hover mt-5 pt-5"id="batchParticipantTable">
+        <thead class="table-primary">
+        <tr>
+            <th>Name</th>
+            <th>Profession</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr style='display:none'></tr>
+        
+
+
+        </tbody>
+    </table>
+</div>
+
+@if (ViewBag.SMsg != null)
+{
+    <h4 style="color: green; font-weight: bold">@ViewBag.SMsg</h4>
+}
+@if (ViewBag.EMsg != null)
+{
+    <h4 style="color: red; font-weight: bold">@ViewBag.EMsg</h4>
+}
+
+@section Scripts
+{
+
+    <script src="~/Scripts/BatchEntry/AssignTrainerParticipant.js"></script>
+    @*<script src="~/Scripts/BatchEntry/BatchInfo.js"></script>*@
+}

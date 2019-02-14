@@ -1,0 +1,102 @@
+﻿@model OnlineExamSystem.Models.CourseCreateForView
+@{
+    ViewBag.Title = "CourseEntry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("CourseEntry","Course"))
+{
+    
+
+    <div class="container">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <div class="form-group">
+                    <h2 class="align-content-center">Course Entry</h2>
+                </div>
+                <div class="form-group">
+
+                    @Html.LabelFor(c => c.Organizationid, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.DropDownListFor(c => c.Organizationid, Model.OrganitionSelectListItem, "---------Select Organization-------", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Organizationid, "", new { @class = "text-danger" })
+                    <span id="OrganizationIdErrorMsg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+
+                    @Html.LabelFor(c => c.Name, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextBoxFor(c => c.Name, null, new { @class = "form-control", placeholder = "Name" })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    <span id="NameIdErrorMsg" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Code", htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextBox("Code", null, new { @class = "form-control", placeholder = "Code" })
+                    <span id="CodeIdErrorMsg" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.CourseDuration, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextBoxFor(c => c.CourseDuration, null, new { @class = "form-control", placeholder = "CourseDuration" })
+                    @Html.ValidationMessageFor(model => model.CourseDuration, "", new { @class = "text-danger" })
+                    <span id="CourseDurationIdErrorMsg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(c => c.Credit, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextBoxFor(c => c.Credit, null, new { @class = "form-control", placeholder = "Credit" })
+                    <span id="CreditIdErrorMsg" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.OutLine, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextAreaFor(c => c.OutLine, new { @class = "form-control" })
+                    <span id="OutLineIdErrorMsg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(c => c.Tags, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextAreaFor(c => c.Tags, new { @class = "form-control" })
+
+                    @*<input type="text" value="" data-role="tagsinput" id="tags" class="form-control" />*@
+
+                    @*<span id="TagsIdErrorMsg" class="text-danger"></span>*@
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" id="SubmitBtn" class="btn btn-success" value="Save" />
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+}
+@if (ViewBag.SMsg != null)
+{
+    <h4 style="color: green; font-weight: bold">@ViewBag.SMsg</h4>
+}
+@if (ViewBag.EMsg != null)
+{
+    <h4 style="color: red; font-weight: bold">@ViewBag.EMsg</h4>
+}
+@section Scripts
+{
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    
+    <script src="~/Scripts/CourseInfo/CourseEntry.js"></script>
+    
+    
+    
+    <script>
+       
+    </script>
+
+    
+}
+

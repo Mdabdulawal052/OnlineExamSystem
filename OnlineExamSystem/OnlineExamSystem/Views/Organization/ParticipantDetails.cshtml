@@ -1,0 +1,135 @@
+﻿@model ExamSystemModel.Models.Participant
+
+@{
+    ViewBag.Title = "ParticipantDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ParticipantDetails</h2>
+
+<div>
+    <h4>Participant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Batch.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Batch.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddLine1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddLine1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddLine2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddLine2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profession)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profession)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HAcademic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HAcademic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Img)
+        </dd>
+
+       
+
+        <dd>
+            @Html.HiddenFor(model => model.CourseId)
+        </dd>
+
+        
+
+        <dd>
+            @Html.HiddenFor(model => model.OrganizationId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Goto Organization Details", "Details", new { id = Model.OrganizationId })
+    
+</p>

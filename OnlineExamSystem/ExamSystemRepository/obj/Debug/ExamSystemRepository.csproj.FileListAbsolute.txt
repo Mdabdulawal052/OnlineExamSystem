@@ -1,0 +1,17 @@
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\ExamSystemRepository.dll.config
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\ExamSystemRepository.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\ExamSystemRepository.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\EntityFramework.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\EntityFramework.SqlServer.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\ExamSystemDataBaseContext.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\ExamSystemModel.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\ExamSystemDataBaseContext.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\ExamSystemModel.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\EntityFramework.xml
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\EntityFramework.SqlServer.xml
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\obj\Debug\ExamSystemRepository.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\obj\Debug\ExamSystemRepository.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\bin\Debug\ExamSystemDataBaseContext.dll.config
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\obj\Debug\ExamSystemRepository.csprojAssemblyReference.cache
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\obj\Debug\ExamSystemRepository.csproj.CoreCompileInputs.cache
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemRepository\obj\Debug\ExamSystemRepository.csproj.CopyComplete

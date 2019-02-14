@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Course List</h2>
+
+<div class="">
+    <table class="table  table-hover mt-5 pt-5">
+        <thead class="table-primary">
+            <tr>
+                <th>Name</th>
+                <th>Course Duration</th>
+                <th>Participants</th>
+                <th>Trainer</th>
+                <th>Batch</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.CourseList != null && Model.CourseList.Count > 0)
+            {
+                foreach (var org in Model.CourseList)
+                {
+                    <tr>
+                        <td>@org.Name</td>
+                        <td>@org.CourseDuration</td>
+                        <td>@org.TotalParticipant</td>
+                        <td>@org.TotalTrainer</td>
+                        <td>@org.TotalBatch</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = org.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = org.Id })
+                        </td>
+                    </tr>
+                }
+            }
+
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,17 @@
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\ExamSystemBLL.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\ExamSystemBLL.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\ExamSystemModel.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\ExamSystemRepository.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\ExamSystemModel.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\ExamSystemRepository.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\obj\Debug\ExamSystemBLL.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\obj\Debug\ExamSystemBLL.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\ExamSystemDataBaseContext.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\EntityFramework.dll
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\ExamSystemDataBaseContext.pdb
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\EntityFramework.xml
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\ExamSystemRepository.dll.config
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\bin\Debug\ExamSystemDataBaseContext.dll.config
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\obj\Debug\ExamSystemBLL.csprojAssemblyReference.cache
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\obj\Debug\ExamSystemBLL.csproj.CoreCompileInputs.cache
+E:\BitmProject\FinalProject\OnlineExamSystem\ExamSystemBLL\obj\Debug\ExamSystemBLL.csproj.CopyComplete

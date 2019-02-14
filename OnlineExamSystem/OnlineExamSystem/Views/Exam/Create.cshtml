@@ -1,0 +1,112 @@
+﻿@model  OnlineExamSystem.Models.ExamEntryForView
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Exam", FormMethod.Post, new { encType = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <h1>Exam Entry</h1>
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(c => c.OrganizationId, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-8">
+                    @Html.DropDownListFor(c => c.OrganizationId, Model.OrganizationSelectListItems, "-----Select-----", new { @class = "form-control" })
+                    <span id="OrganizationIdErrorMsg" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.CourseId, "Course", new { @class = "control-label col-md-2" })
+
+                <div class="col-md-8">
+                    @Html.DropDownListFor(c => c.CourseId, Model.CourseSelectListItems, new { @class = "form-control" })
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                    @Html.LabelFor(c => c.Examtype, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    <div class="col-md-8">
+                        @Html.DropDownListFor(c => c.Examtype, Model.ExamTypeList, new { @class = "form-control" })
+                    </div>
+
+                </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.ExamCode, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-8">
+                    @Html.TextBoxFor(c => c.ExamCode, null, new { @class = "form-control", placeholder = "Code" })
+                    @Html.ValidationMessageFor(model => model.ExamCode, "", new { @class = "text-danger" })
+                    <span id="CodeErrorMsg" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Topic, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-8">
+                    @Html.TextBoxFor(c => c.Topic, null, new { @class = "form-control", placeholder = "Topic" })
+                    <span id="TopicErrorMsg" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.FMarks, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-8">
+                    @Html.TextBoxFor(c => c.FMarks, null, new { @class = "form-control", placeholder = "Full Marks" })
+                    <span id="FMarksErrorMsg" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Duration, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-10">
+                    <input type="time" name="Duration" value="Duration" class="form-control col-md-4"/>
+                    <span id="DurationErrorMsg" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" id="SubmitBtn" class="btn btn-success" value="Save" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+@if (ViewBag.SMsg != null)
+{
+    <h4 style="color: green; font-weight: bold">@ViewBag.SMsg</h4>
+}
+@if (ViewBag.EMsg != null)
+{
+    <h4 style="color: red; font-weight: bold">@ViewBag.EMsg</h4>
+}
+
+@section scripts{
+
+    
+<script src="~/Scripts/OnlineExam/ExamEntry/ExamEntry.js"></script>
+}
+
+@*@section Styles{
+
+        <script src="~/Scripts/Organization/OrganizationScript.js"></script>
+    }*@
+

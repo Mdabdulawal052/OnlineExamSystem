@@ -1,0 +1,58 @@
+﻿@model OnlineExamSystem.Models.QuestionCreateForView
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_layoutUser.cshtml";
+}
+
+@using (Html.BeginForm("Index", "ExamAttend"))
+{
+    <div class="container">
+        <div class="col-sm-offset-2 col-sm-6" style="margin-top:60px">
+            <div class="panel panel-primary">
+                <div class="panel-heading text-center">Exam</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class=" col-md-3">
+                            @Html.LabelFor(c => c.OrganizationId, htmlAttributes: new { @class = "control-label" })
+                        </div>
+                        <div class=" col-md-8">
+                            @Html.DropDownListFor(c => c.OrganizationId, ViewBag.ExmAttendOrganizationList as SelectList, "--Select--", new { @class = "form-control" })
+                            <span class="text-danger" id="OrganizationValidationMessage"></span>
+                        </div>
+                    </div>
+                    <div class="row my-2" style="margin-top:5px">
+                        <div class=" col-md-3">
+                            @Html.LabelFor(c => c.CourseId, "Course", new { @class = "control-label" })
+                        </div>
+                        <div class=" col-md-8">
+                            @Html.DropDownListFor(c => c.CourseId, ViewBag.QuestionCourseList as SelectList, "--Select--", new { @class = "form-control" })
+                            <span class="text-danger" id="CourseValidationMessage"></span>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:5px">
+                        <div class=" col-md-3">
+                            @Html.LabelFor(c => c.ExamId, "Exam", new { @class = "control-label" })
+                        </div>
+                        <div class=" col-md-8">
+                            @Html.DropDownListFor(c => c.ExamId, ViewBag.QuestionExamList as SelectList, "--Select--", new { @class = "form-control" })
+                            <span class="text-danger" id="BatchValidationMessage"></span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="panel-footer">
+                    <div class="col-xs-3"></div>
+                    <input type="submit" id="ExmAttendButton" class="btn btn-success" value="Start" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    @*</div>*@
+}
+
+@section Scripts
+    {
+
+    <script src="~/Scripts/ExamAttend/ExamAttend.js"></script>
+}

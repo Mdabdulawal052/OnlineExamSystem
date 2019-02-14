@@ -1,0 +1,162 @@
+﻿@model OnlineExamSystem.Models.QuestionCreateForView
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@using (Ajax.BeginForm("Create", "Question", new AjaxOptions()
+{
+    HttpMethod = "POST"
+}))
+{*@
+@*using (Html.BeginForm("Create","Question"))*@
+
+<form>
+
+    <div class="container">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <div class="form-group">
+                    <h2 class="align-content-center" style="text-align: center">Question And Answer Entry</h2>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.OrganizationId, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.DropDownListFor(c => c.OrganizationId, ViewBag.QuestionOrganizationList as SelectList, "--Select--", new { @class = "form-control" })
+                    <span class="text-danger" id="OrganizationValidationMessage"></span>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.CourseId, "Course", new { @class = "control-label col-md-3" })
+                    @Html.DropDownListFor(c => c.CourseId, ViewBag.QuestionCourseList as SelectList, "--Select--", new { @class = "form-control" })
+
+                    <span class="text-danger" id="CourseValidationMessage"></span>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.ExamId, "Exam", new { @class = "control-label col-md-3" })
+                    @Html.DropDownListFor(c => c.ExamId, ViewBag.QuestionExamList as SelectList, "--Select--", new { @class = "form-control" })
+
+                    <span class="text-danger" id="BatchValidationMessage"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class=" col-4">
+                            @Html.LabelFor(c => c.WriteQuestion, htmlAttributes: new { @class = "control-label" })
+                        </div>
+                        <div class=" col-1">
+                            @Html.LabelFor(c => c.Marks, htmlAttributes: new { @class = "control-label" })
+                        </div>
+                        <div class=" col-2">
+                            @Html.TextBoxFor(c => c.Marks, null, new { @class = "form-control" })
+                        </div>
+                        <div class=" col-3">
+                            @Html.Label("QuestionOrder", htmlAttributes: new { @class = "control-label" })
+                        </div>
+                        <div class=" col-2">
+                            @Html.TextBox("QuestionOrder", null, new { @class = "form-control", @readonly = "readonly" })
+                        </div>
+                    </div>
+                    <div>
+                        @Html.TextAreaFor(c => c.WriteQuestion, new { @class = "form-control" })
+                        <span class="text-danger" id="NameValidationMessage"></span>
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.OptionTypeId, new { @class = "control-label col-md-3" })
+                    @Html.DropDownListFor(c => c.OptionTypeId, Model.QuestionTypeSelectListItems, "-----Select-----", new { @class = "form-control" })
+                    <span class="text-danger" id="CourseValidationMessage"></span>
+                </div>
+                <span id="suwelk"></span>
+                <div id="ShowOption">
+                    <div class="container ">
+
+                        <div class="form row">
+
+
+                            <div class="form-group col-2 ml-3">
+                                <input type="text" name="Sl" id="Sl" class = "form-control" readonly />
+                                 
+                            </div>
+
+                            <div class="form-group col-1 ml-3">
+                                @*@Html.RadioButton("checkbox", "True", htmlAttributes: new { @class = "" })*@
+                                <input type="checkbox" checked="checked" name="checkbox" value="true" />
+                            </div>
+                            <div class="form-group col-4 ml-3">
+
+                                @Html.TextBox("Option", null, new { @class = "form-control " })
+                            </div>
+
+                            <div class="col-2 ml-3">
+
+                                <button type="button" id="basicQuestionSubmitbtn" class="btn btn-primary btn-lg active "><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="">
+                        <table class="table  table-hover mt-5 pt-5">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Sl</th>
+                                    <th>Option</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody id="QuestionCreateBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-md-3"></div>
+                <div class="col-md-8">
+
+                    <button type="button" id="SubmitButton" class="btn btn-primary btn-lg active ">Save</button>
+                </div>
+
+                @if (ViewBag.SmsIs != null)
+                {
+                    <h3>@ViewBag.SmsIs</h3>
+                }
+            </div>
+
+            <div class="col-md-6">
+                <h3 class="offset-3">Question</h3>
+                <table class="table  table-hover mt-5 pt-5" id="CreateQuestoionTable">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Order</th>
+                            <th>Question</th>
+                            <th>Question Type</th>
+                            <th>Option</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style='display:none'></tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+@*}*@
+
+@section Scripts
+{
+    <script src="~/Scripts/Question/Question.js"></script>
+
+}
+

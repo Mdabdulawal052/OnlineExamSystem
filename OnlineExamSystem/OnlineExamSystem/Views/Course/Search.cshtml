@@ -1,0 +1,132 @@
+﻿@model OnlineExamSystem.Models.CourseCreateForView
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search</h2>
+<script type="text/javascript">
+    $(function() {
+        $("#nameSearch").autocomplete({
+            source: '@Url.Action("GetCourse")'
+        });
+    });
+</script>
+@*@section scripts{
+
+    
+<script src="~/Scripts/CourseInfo/SearchWithName.js"></script>
+}*@
+
+@using (Html.BeginForm())
+{
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(c => c.Name, htmlAttributes: new { @class = "col-md-2" })
+            @Html.TextBoxFor(c => c.Name, null, new { @class = "form-control", placeholder = "Name",id="nameSearch"})
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.Label("Duration", htmlAttributes: new { @class = "col-md-3 mt-1" })
+                    @Html.TextBoxFor(c=>c.CDFrom, null, new { @class = "form-control", placeholder = "ContactNumber" })
+                </div>
+                <div class="col-md-6">
+                    @Html.Label("To", htmlAttributes: new { @class = "col-md-3 mt-1" })
+                    @Html.TextBoxFor(c=>c.CDTo, null, new { @class = "form-control", placeholder = "ContactNumber" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(c => c.Code, htmlAttributes: new { @class = "col-md-2" })
+            @Html.TextBoxFor(c => c.Code, null, new { @class = "form-control", placeholder = "Code" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.Label("Credit", htmlAttributes: new { @class = "col-md-3 mt-1" })
+                    @Html.TextBoxFor(c=>c.CCFrom, null, new { @class = "form-control", placeholder = "ContactNumber" })
+                </div>
+                <div class="col-md-6">
+                    @Html.Label("To", htmlAttributes: new { @class = "col-md-3 mt-1" })
+                    @Html.TextBoxFor(c=>c.CCTo, null, new { @class = "form-control", placeholder = "ContactNumber" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.Label("Description", htmlAttributes: new { @class = "col-md-3" })
+            @Html.TextBoxFor(c => c.OutLine, null, new { @class = "form-control", placeholder = "Address" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(c => c.Tags, htmlAttributes: new { @class = "col-md-2" })
+            @Html.TextBoxFor(c => c.Tags, null, new { @class = "form-control", placeholder = "Code" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(c => c.Organizationid, htmlAttributes: new { @class = "col-md-3 mt-1" })
+            @Html.DropDownListFor(c => c.Organizationid, Model.OrganizationListItems, "..Select..", new { @class = "form-control" })
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <input type="submit" class="btn btn-success float-left" name="Search" />
+</div>
+
+}
+<div class="">
+    <table class="table  table-hover mt-5 pt-5">
+        <thead class="table-primary">
+            <tr>
+                <th>Name</th>
+                <th>Course Duration</th>
+                <th>Participants</th>
+                <th>Trainer</th>
+                <th>Batch</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.CourseList != null && Model.CourseList.Count > 0)
+            {
+                foreach (var org in Model.CourseList)
+                {
+                    <tr>
+                        <td>@org.Name</td>
+                        <td>@org.CourseDuration</td>
+                        <td>@org.TotalParticipant</td>
+                        <td>@org.TotalTrainer</td>
+                        <td>@org.TotalBatch</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = org.Id }) |
+                            @Html.ActionLink("Details","Details", new { id = org.Id })
+                        </td>
+                    </tr>
+                }
+            }
+
+
+        </tbody>
+    </table>
+</div>
+
+
+
+
+

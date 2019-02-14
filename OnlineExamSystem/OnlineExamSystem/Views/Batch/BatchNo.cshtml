@@ -1,0 +1,103 @@
+﻿@model OnlineExamSystem.Models.BatchEntryCreateForView
+@{
+    Layout = null;
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <div class="form-group">
+                    <h2 class="align-content-center">Batch Entry</h2>
+                </div>
+                <div class="form-group">
+
+                    @Html.LabelFor(c => c.OrganizationId, new { @class = "control-label col-md-3" })
+                    @Html.DropDownListFor(c => c.OrganizationId, ViewBag.BatchOrganizationList as SelectList, "--Select--", new { @class = "form-control" })
+                    
+                    <span id="OrganizationIdErrorMsg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+
+                    @Html.LabelFor(c => c.CourseId, new { @class = "control-label col-md-3" })
+                    @Html.DropDownListFor(c => c.CourseId, ViewBag.BatchCourseList as SelectList, "--Select--", new { @class = "form-control" })
+                    <span id="CourseIdErrorMsg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+
+                    @Html.LabelFor(c => c.BatchNo, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextBoxFor(c => c.BatchNo, new { @class = "form-control", placeholder = "BatchNo" })
+                    <span id="BatchNoIdErrorMsg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(c => c.Description, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextAreaFor(c => c.Description, new { @class = "form-control" })
+                    <span id="DescriptionIdErrorMsg" class="text-danger"></span>
+                </div>
+
+
+
+                @*<div class="form-group">
+                        @Html.LabelFor(c => c.SDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                        @Html.EditorFor(c => c.SDate, null, new { @class = "form-control" })
+
+                    </div>*@
+                <div class="form-group">
+                    @Html.LabelFor(c => c.SDate, htmlAttributes: new { @class = "control-label" })
+                    @Html.TextBoxFor(c => c.SDate, null, new { @class = "form-control ", id = "date2" })
+                    <span id="SDateIdErrorMsg" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(c => c.EDate, htmlAttributes: new { @class = "control-label" })
+                    @Html.TextBoxFor(c => c.EDate, null, new { @class = "form-control ", id = "date3" })
+                    <span id="EDateIdErrorMsg" class="text-danger"></span>
+                </div>
+
+
+
+                @Html.HiddenFor(c => c.Id, htmlAttributes: new { @id = "BatchcId" })
+
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <input type="submit" id="SubmitBtn" class="btn btn-success" value="Update" />
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+@if (ViewBag.SMsg != null)
+{
+    <h4 style="color: green; font-weight: bold">@ViewBag.SMsg</h4>
+}
+@if (ViewBag.EMsg != null)
+{
+    <h4 style="color: red; font-weight: bold">@ViewBag.EMsg</h4>
+}
+
+@section Styles
+{
+
+
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+    
+}
+@section Scripts
+{
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/BatchEntry/BatchIndex.js"></script>
+    <script src="~/Scripts/BatchEntry/BatchEntry.js"></script>
+}
+
+

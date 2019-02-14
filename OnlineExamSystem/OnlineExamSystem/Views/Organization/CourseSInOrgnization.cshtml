@@ -1,0 +1,39 @@
+﻿ @model OnlineExamSystem.Models.CourseCreateForView
+@{
+    Layout = null;
+}
+
+
+<div class="">
+    <table class="table  table-hover mt-5 pt-5">
+        <thead class="table-primary">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Trainer</th>
+            <th>Participant</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model != null && Model.CourseList != null && Model.CourseList.Count > 0)
+        {
+            foreach (var org in Model.CourseList)
+            {
+                <tr>
+                    <td>@org.Name</td>
+                    <td>@org.Code</td>
+                    <td>@org.TotalTrainer</td>
+                    <td>@org.TotalParticipant</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = org.Id }) |
+                        @Html.ActionLink("Details","CourseDetails", new { id = org.Id })
+                    </td>
+                </tr>
+            }
+        }
+
+
+        </tbody>
+    </table>
+</div>

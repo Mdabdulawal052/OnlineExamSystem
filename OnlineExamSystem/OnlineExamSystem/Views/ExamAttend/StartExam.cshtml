@@ -1,0 +1,44 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<ExamSystemModel.Models.Question>
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_layoutUser.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StartExam</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+</head>
+<body>
+@using (Html.BeginForm("StartExam", "ExamAttend"))
+    {
+    <div class="container">
+        <h2 style="color:forestgreen">Exam Start</h2>
+        @foreach (var i in Model)
+        {
+            
+            @i.QuestionOrder<h4>@i.WriteQuestion</h4>
+            <input type="hidden" name="Id" value="@i.Id" />
+            <input type="hidden" name="Marks" value="@i.Marks" />
+            foreach (var j in i.QOptions)
+            {
+                <h4><input type="radio" name="@i.Id" value="@j.Id">@j.Option</h4>
+            }
+         }
+        <input type="submit" class="btn btn-success" value="End Exam" />
+</div>
+}
+</body>
+</html>
+@Html.PagedListPager(Model, page => Url.Action("StartExam", new { page }),
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>

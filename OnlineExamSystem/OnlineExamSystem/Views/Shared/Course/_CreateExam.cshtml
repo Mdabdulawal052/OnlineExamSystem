@@ -1,0 +1,129 @@
+﻿
+@model OnlineExamSystem.Models.ExamEntryForView
+@using (Ajax.BeginForm("CreateExam", "Course", new AjaxOptions()
+{
+    HttpMethod = "POST"
+}))
+{
+    
+    <div class="container">
+        <h1>Exam Entry</h1>
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(c => c.OrganizationId, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-6">
+                    @Html.DropDownListFor(model => model.OrganizationId, ViewBag.OrgList as SelectList, "--Select--", new { @class = "form-control" })
+                   
+                    
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.CourseId, new { @class = "control-label col-md-2" })
+
+                <div class="col-md-6">
+                    @Html.DropDownListFor(model => model.CourseId, ViewBag.CourseList as SelectList, "--Select--", new { @class = "form-control" })
+                   
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Examtype, htmlAttributes: new { @class = "control-label col-md-2" })
+         
+                <div class="col-md-6">
+                    @Html.DropDownListFor(c => c.Examtype, null, new { @class = "form-control" })
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.ExamCode, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-6">
+                    @Html.TextBoxFor(c => c.ExamCode, null, new { @class = "form-control", placeholder = "Code" })
+                    <span id="CodeErrorMsg" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Topic, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-6">
+                    @Html.TextBoxFor(c => c.Topic, null, new { @class = "form-control", placeholder = "Topic" })
+                    <span id="TopicErrorMsg" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.FMarks, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-6">
+                    @Html.TextBoxFor(c => c.FMarks, null, new { @class = "form-control", placeholder = "Full Marks" })
+                    <span id="FMarksErrorMsg" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(c => c.Duration, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                <div class="col-md-6">
+                    @Html.TextBoxFor(c => c.Duration, null, new { @class = "form-control", placeholder = "Duration"})
+                    <span id="DurationErrorMsg" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-6">
+                    <input type="submit" id="SubmitBtn" class="btn btn-success" value="Save" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+}
+
+<div class="">
+    <table class="table  table-hover mt-5 pt-5" id="ExamTable">
+        <thead class="table-primary">
+        <tr>
+            <th>Type</th>
+            <th>Topic</th>
+            <th>Code</th>
+            <th>FullMarks</th>
+            <th>Duration</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody id="TbodyId">
+            <tr style='display:none'></tr>
+        
+
+
+        </tbody>
+    </table>
+</div>
+@if (ViewBag.SMsg != null)
+{
+    <h4 style="color: green; font-weight: bold">@ViewBag.SMsg</h4>
+}
+@if (ViewBag.EMsg != null)
+{
+    <h4 style="color: red; font-weight: bold">@ViewBag.EMsg</h4>
+}
+
+@section Scripts{
+@*<script src="~/Scripts/CourseInfo/AssignTrainer.js"></script>*@
+   
+@*<script src="~/Scripts/OnlineExam/ExamEntry/ExamEntryPv.js"></script>*@
+    
+}
+

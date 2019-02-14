@@ -1,0 +1,41 @@
+﻿@model ExamSystemModel.Models.Course
+
+@{
+    ViewBag.Title = "CourseNameInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-8">
+        <h2>CourseNameInfo</h2>
+    </div>
+    <div class="col-2">
+        @Html.ActionLink("<-Edit", "CourseInfo", new { id = Model.Id })
+    </div>
+    <div class="col-2">
+        @Html.ActionLink("<-Search", "Search")
+    </div>
+</div>
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#basicInfo">BasicInfo</a></li>
+    <li><a data-toggle="tab" href="#assingOutline">OutLine</a></li>
+    <li><a data-toggle="tab" href="#assingExam">Exam</a></li>
+    <li><a data-toggle="tab" href="#assingParticipant">Participant</a></li>
+    <li><a data-toggle="tab" href="#assingTrainer">Trainer</a></li>
+            
+</ul>
+
+<div class="tab-content">
+    <div id="basicInfo" class="tab-pane fade in active">@Html.Action("CourseName")</div>
+    <div id="assingOutline" class="tab-pane fade in ">@Html.Action("Outline")</div>
+    <div id="assingExam" class="tab-pane fade in ">@Html.Action("ExamInfo")</div>
+    <div id="assingParticipant" class="tab-pane fade in ">@Html.Action("ParticipantInfoNew")</div>
+    <div id="assingTrainer" class="tab-pane fade in ">@Html.Action("TrainerInfoNew")</div>
+            
+</div>
+
+@section Styles{
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+}

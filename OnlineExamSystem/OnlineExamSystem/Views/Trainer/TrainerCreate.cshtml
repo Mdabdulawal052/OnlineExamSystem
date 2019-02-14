@@ -1,0 +1,133 @@
+﻿@model OnlineExamSystem.Models.TrainerCreateForPV
+@{
+    ViewBag.Title = "TrainerCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("TrainerCreate", "Trainer", FormMethod.Post, new { encType = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <div class="form-group">
+                    <h2 class="align-content-center">Trainer Entry</h2>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.OrganizationId, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.DropDownListFor(c => c.OrganizationId, Model.OrganiSelectListItems, "Select...", new { @class = "form-control" })
+                    <span class="text-danger" id="OrganizationValidationMessage"></span>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.CourseId, "Course", new { @class = "control-label col-md-3" })
+                    @Html.DropDownListFor(c => c.CourseId, Model.CourSelectListItems, new { @class = "form-control" })
+                    <span class="text-danger" id="CourseValidationMessage"></span>
+
+                    @Html.LabelFor(c => c.Lead, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.CheckBoxFor(c => c.Lead, new { @checked = "checked" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.BatchId, "Batch", new { @class = "control-label col-md-3" })
+                    @Html.DropDownListFor(c => c.BatchId, Model.BathcSelectListItems, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.BatchId, "", new { @class = "text-danger" })
+                    <span class="text-danger" id="BatchValidationMessage"></span>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.Name, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextBoxFor(c => c.Name, null, new { @class = "form-control", placeholder = "Name" })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    <span class="text-danger" id="NameValidationMessage"></span>
+                </div>
+
+
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.ContactNo, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextBoxFor(c => c.ContactNo, null, new { @class = "form-control", placeholder = "Contact Number" })
+                    @Html.ValidationMessageFor(model => model.ContactNo, "", new { @class = "text-danger" })
+                    <span class="text-danger" id="ContactValidationMessage"></span>
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(c => c.Email, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextBoxFor(c => c.Email, null, new { @class = "form-control", placeholder = "Email" })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    <span class="text-danger" id="EmailValidationMessage"></span>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.AddLine1, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextAreaFor(c => c.AddLine1, new { @class = "form-control", placeholder = "Address" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.AddLine2, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextAreaFor(c => c.AddLine2, new { @class = "form-control", placeholder = "Address" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.City, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextAreaFor(c => c.City, new { @class = "form-control" })
+                    <span class="text-danger" id="CityValidationMessage"></span>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.PostCode, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextAreaFor(c => c.PostCode, new { @class = "form-control" })
+                    <span class="text-danger" id="PostCodeValidationMessage"></span>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.Country, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextAreaFor(c => c.Country, new { @class = "form-control", placeholder = "Country" })
+                    <span class="text-danger" id="CountryValidationMessage"></span>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(c => c.Img, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div>
+                        <input type="file" name="Img" class="form-control" />
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Img, "", new { @class = "text-danger" })
+
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-8">
+
+                    <button type="submit" id="SubmitButton" class="btn btn-primary btn-lg active ">Save</button>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+}
+
+@if (ViewBag.SMsg != null)
+{
+    <h4 style="color: green; font-weight: bold">@ViewBag.SMsg</h4>
+}
+@if (ViewBag.EMsg != null)
+{
+    <h4 style="color: red; font-weight: bold">@ViewBag.EMsg</h4>
+}
+
+@section scripts{
+
+    <script src="~/Scripts/TrainerEntry/TrainerEntry.js"></script>
+}
+
+@*@section Styles{
+
+        <script src="~/Scripts/Organization/OrganizationScript.js"></script>
+    }*@
+

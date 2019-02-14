@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91E897B3-7DE3-446C-889C-78052915A410}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExamSystemBLL</RootNamespace>
+    <AssemblyName>ExamSystemBLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AdminBLL.cs" />
+    <Compile Include="BLL\BatchBLL.cs" />
+    <Compile Include="BLL\BatchPartiBLL.cs" />
+    <Compile Include="BLL\BatchTrainerBLL.cs" />
+    <Compile Include="BLL\CourseAssingBLL.cs" />
+    <Compile Include="BLL\CourseBLL.cs" />
+    <Compile Include="BLL\ExamBLL.cs" />
+    <Compile Include="BLL\ExamScheduleBLL.cs" />
+    <Compile Include="BLL\ExamTypeBLL.cs" />
+    <Compile Include="BLL\OrganizationBLL.cs" />
+    <Compile Include="BLL\ParticipantBLL.cs" />
+    <Compile Include="BLL\QOptionBLL.cs" />
+    <Compile Include="BLL\QuestionBLL.cs" />
+    <Compile Include="BLL\QuestionTypeBLL.cs" />
+    <Compile Include="BLL\TrainerBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExamSystemModel\ExamSystemModel.csproj">
+      <Project>{5c64ff95-df0a-4678-b77e-c07fe5cd4995}</Project>
+      <Name>ExamSystemModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExamSystemRepository\ExamSystemRepository.csproj">
+      <Project>{ae9765b5-6593-4216-b6a4-7099027dd0ef}</Project>
+      <Name>ExamSystemRepository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

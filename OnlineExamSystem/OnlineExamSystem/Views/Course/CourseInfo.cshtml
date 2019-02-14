@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "CourseInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CourseInfo</h2>
+
+@*<div>
+    <button class="btn btn-success" id="basicInfoFor">CourseInfo</button>
+    <button class="btn btn-success" id="AssignTrainer">TrainerAss</button>
+    <button class="btn btn-success" id="createExam">CreateExam</button>
+</div>
+
+<div id="basicdiv"></div>
+<div id="Trainerdiv"></div>
+<div id="Creatediv"></div>*@
+
+
+
+<ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#basicInfoFor" >BasicInfo</a></li>
+        <li><a data-toggle="tab" href="#AssignTrainerFor" id="AssignTrainer">AssignTrainer</a></li>
+        <li><a data-toggle="tab" href="#createExamFor" id="createExam">CreateExam</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="basicInfoFor" class="tab-pane fade in active">
+            @Html.Action("BasicInfo")
+        </div>
+        <div id="AssignTrainerFor" class="tab-pane fade in ">
+            @Html.Partial("Course/_AssignTrainer")
+            <div id="Trainerdiv"></div>
+        </div>
+        <div id="createExamFor" class="tab-pane fade in ">
+            @Html.Partial("Course/_CreateExam")
+            <div id="Creatediv"></div>
+        </div>
+    </div>
+
+
+@section scripts{
+
+    
+<script src="~/Scripts/CourseInfo/AssignTrainer.js"></script>
+<script src="~/Scripts/CourseInfo/CreateExam.js"></script>
+@*<script src="~/Scripts/CourseInfo/CreateExam.js"></script>*@
+}
+@section Styles{
+   
+ 
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" /> 
+}

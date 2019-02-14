@@ -1,0 +1,53 @@
+﻿@model ExamSystemModel.Models.Organization
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Organization Information</div>
+    <div class="panel-body">
+        <div class="form-group row">
+            <div class="col-md-5">
+                <img src="@Url.Content(Model.Logo)" width="200" height="200" />
+            </div>
+            <div class="col-md-7 text-left">
+                <h2>@Html.DisplayFor(model => model.Name)</h2>
+                <p>@Html.DisplayFor(model => model.About)</p>
+            </div>
+        </div>
+        
+        
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#basicInfo">Courses</a></li>
+            <li><a data-toggle="tab" href="#assingParticipant">Trainer</a></li>
+            <li><a data-toggle="tab" href="#assingTrainer">Participant</a></li>
+            
+        </ul>
+
+        <div class="tab-content">
+            <div id="basicInfo" class="tab-pane fade in active">@Html.Action("CourseSInOrgnization")</div>
+            <div id="assingParticipant" class="tab-pane fade in ">@Html.Action("CourseTrianer")</div>
+            <div id="assingTrainer" class="tab-pane fade in ">@Html.Action("CourseParticipant")</div>
+            
+        </div>
+        
+
+       
+        <div class="form-group row text-center">
+            <p>@Html.DisplayFor(model => model.Address)</p>
+            
+        </div>
+        <div class="form-group row text-center">
+            
+            <p>@Html.DisplayFor(model => model.ContactNumber)</p>
+        </div>
+    </div>
+
+</div>
+@section Styles{
+ 
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" /> 
+}

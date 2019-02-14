@@ -1,0 +1,110 @@
+﻿@model OnlineExamSystem.Models.BatchEntryCreateForView
+
+@{
+    ViewBag.Title = "BatchEntry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("BatchEntry", "Batch"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <div class="form-group">
+                    <h2 class="align-content-center">Batch Entry</h2>
+                </div>
+                <div class="form-group">
+
+                    @Html.LabelFor(c => c.OrganizationId, htmlAttributes: new { @class = "control-label col-md-3" })
+
+                    @Html.DropDownListFor(c => c.OrganizationId, Model.OrganizationSelectListItem, "---------Select Course-------", new { @class = "form-control" })
+                    <span id="OrganizationIdErrorMsg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+
+                    @Html.LabelFor(c => c.CourseId, "Course", new { @class = "control-label col-md-3" })
+
+                    @Html.DropDownListFor(c => c.CourseId, Model.CourseSelectListItem, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CourseId, "", new { @class = "text-danger" })
+                    <span id="CourseIdErrorMsg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+
+                    @Html.LabelFor(c => c.BatchNo, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextBoxFor(c => c.BatchNo, new { @class = "form-control", placeholder = "BatchNo" })
+                    @Html.ValidationMessageFor(model => model.BatchNo, "", new { @class = "text-danger" })
+                    <span id="BatchNoIdErrorMsg" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(c => c.Description, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.TextAreaFor(c => c.Description, new { @class = "form-control" })
+                    <span id="DescriptionIdErrorMsg" class="text-danger"></span>
+                </div>
+
+
+
+                @*<div class="form-group">
+                        @Html.LabelFor(c => c.SDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                        @Html.EditorFor(c => c.SDate, null, new { @class = "form-control" })
+
+                    </div>*@
+                <div class="form-group">
+                    @Html.LabelFor(c => c.SDate, htmlAttributes: new { @class = "control-label" })
+                    @Html.TextBoxFor(c => c.SDate, null, new { @class = "form-control ", id = "datepicker1" })
+                    @Html.ValidationMessageFor(model => model.SDate, "", new { @class = "text-danger" })
+                    <span id="SDateIdErrorMsg" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(c => c.EDate, htmlAttributes: new { @class = "control-label" })
+                    @Html.TextBoxFor(c => c.EDate, null, new { @class = "form-control", id = "datepicker2" })
+                    @Html.ValidationMessageFor(model => model.EDate, "", new { @class = "text-danger" })
+                    <span id="EDateIdErrorMsg" class="text-danger"></span>
+                </div>
+
+
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" id="SubmitBtn" class="btn btn-success" value="Save" />
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+@if (ViewBag.SMsg != null)
+{
+    <h4 style="color: green; font-weight: bold">@ViewBag.SMsg</h4>
+}
+@if (ViewBag.EMsg != null)
+{
+    <h4 style="color: red; font-weight: bold">@ViewBag.EMsg</h4>
+}
+
+
+@section Styles
+{
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.datetimepicker.min.css" rel="stylesheet" />
+}
+@section Scripts
+{
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/jquery-ui.min.js"></script>
+        <script src="~/Content/jquery.datetimepicker.full.js"></script>
+        <script src="~/Scripts/BatchEntry/AssignTrainerParticipant.js"></script>
+        <script src="~/Scripts/BatchEntry/BatchIndex.js"></script>
+
+    <script src="~/Scripts/BatchEntry/BatchEntry.js"></script>
+}

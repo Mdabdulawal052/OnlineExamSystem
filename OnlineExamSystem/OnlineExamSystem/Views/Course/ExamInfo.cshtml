@@ -1,0 +1,35 @@
+﻿@model OnlineExamSystem.Models.ExamEntryForView
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <table class="table  table-hover mt-5 pt-5">
+        <thead class="table-primary">
+        <tr>
+            <th>Code</th>
+            <th>Topic</th>
+            <th>FMarks</th>
+            <th>Duration</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model != null && Model.ExamtListItm != null && Model.ExamtListItm.Count > 0)
+        {
+            foreach (var org in Model.ExamtListItm)
+            {
+                <tr>
+                    
+                    <td>@org.Code</td>
+                    <td>@org.Topic</td>
+                    <td>@org.FMarks</td>
+                    <td>@org.Duration</td>
+
+                </tr>
+            }
+        }
+
+
+        </tbody>
+    </table>
+</div>

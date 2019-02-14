@@ -1,0 +1,60 @@
+﻿@model ExamSystemModel.Models.ExamSchedule
+
+@*@using (Html.BeginForm()) 
+{*@
+<form id="ExamScheduleForm">
+    @*@Html.AntiForgeryToken()*@
+
+    <div class="form-horizontal">
+        <h4>ExamSchedule</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ExamId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.DropDownListFor(c => c.ExamId, null, "..Select..", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ExamId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group ">
+            @Html.LabelFor(model => model.ScheduleDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(c => c.ScheduleDateTime, null, new { @class = "form-control", id = "ExamDate" })
+                @Html.ValidationMessageFor(model => model.ScheduleDateTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="ExamScheduleButton" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+@*}*@
+
+<div class="">
+    <table class="table  table-hover mt-5 pt-5" id="examScheduleTable">
+        <thead class="table-primary">
+            <tr>
+                <th>Type</th>
+                <th>Topic</th>
+                <th>Code</th>
+                <th>Duration</th>
+                <th>Full Marks</th>
+                <th>Schedule</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr style='display:none'></tr>
+
+
+
+        </tbody>
+    </table>
+</div>

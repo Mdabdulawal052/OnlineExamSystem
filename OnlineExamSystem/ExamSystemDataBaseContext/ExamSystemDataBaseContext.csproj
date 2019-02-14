@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2A64358-07B8-4570-ADF2-618B687495B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExamSystemDataBaseContext</RootNamespace>
+    <AssemblyName>ExamSystemDataBaseContext</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBaseContext\OnlineExamDb.cs" />
+    <Compile Include="Migrations\201812111721161_CreateDataBase.cs" />
+    <Compile Include="Migrations\201812111721161_CreateDataBase.Designer.cs">
+      <DependentUpon>201812111721161_CreateDataBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812121102237_CreateCourseAssingTable.cs" />
+    <Compile Include="Migrations\201812121102237_CreateCourseAssingTable.Designer.cs">
+      <DependentUpon>201812121102237_CreateCourseAssingTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812131440025_addLeadNormalTriner.cs" />
+    <Compile Include="Migrations\201812131440025_addLeadNormalTriner.Designer.cs">
+      <DependentUpon>201812131440025_addLeadNormalTriner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812140257197_relationshipAssTandTrainer.cs" />
+    <Compile Include="Migrations\201812140257197_relationshipAssTandTrainer.Designer.cs">
+      <DependentUpon>201812140257197_relationshipAssTandTrainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812140657325_addNewmigration.cs" />
+    <Compile Include="Migrations\201812140657325_addNewmigration.Designer.cs">
+      <DependentUpon>201812140657325_addNewmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812141634298_AddAssTriner.cs" />
+    <Compile Include="Migrations\201812141634298_AddAssTriner.Designer.cs">
+      <DependentUpon>201812141634298_AddAssTriner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812160456360_AddPartiandTrainerAss.cs" />
+    <Compile Include="Migrations\201812160456360_AddPartiandTrainerAss.Designer.cs">
+      <DependentUpon>201812160456360_AddPartiandTrainerAss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812161321107_AddColumnOrganizationId.cs" />
+    <Compile Include="Migrations\201812161321107_AddColumnOrganizationId.Designer.cs">
+      <DependentUpon>201812161321107_AddColumnOrganizationId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812161508059_AddExamColmn1.cs" />
+    <Compile Include="Migrations\201812161508059_AddExamColmn1.Designer.cs">
+      <DependentUpon>201812161508059_AddExamColmn1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812161522405_AddTableExamType.cs" />
+    <Compile Include="Migrations\201812161522405_AddTableExamType.Designer.cs">
+      <DependentUpon>201812161522405_AddTableExamType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812161536495_AddTableExamTypeId.cs" />
+    <Compile Include="Migrations\201812161536495_AddTableExamTypeId.Designer.cs">
+      <DependentUpon>201812161536495_AddTableExamTypeId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812161624142_UpdateExamDuration.cs" />
+    <Compile Include="Migrations\201812161624142_UpdateExamDuration.Designer.cs">
+      <DependentUpon>201812161624142_UpdateExamDuration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812170337091_ExamtypeColmchange.cs" />
+    <Compile Include="Migrations\201812170337091_ExamtypeColmchange.Designer.cs">
+      <DependentUpon>201812170337091_ExamtypeColmchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812170829254_AddColmnInPaRtTrai.cs" />
+    <Compile Include="Migrations\201812170829254_AddColmnInPaRtTrai.Designer.cs">
+      <DependentUpon>201812170829254_AddColmnInPaRtTrai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812170852305_QuestionAddModel.cs" />
+    <Compile Include="Migrations\201812170852305_QuestionAddModel.Designer.cs">
+      <DependentUpon>201812170852305_QuestionAddModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812171824598_deletecourseListTrainer.cs" />
+    <Compile Include="Migrations\201812171824598_deletecourseListTrainer.Designer.cs">
+      <DependentUpon>201812171824598_deletecourseListTrainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812180436277_AddRelationShipQuesQuesOP.cs" />
+    <Compile Include="Migrations\201812180436277_AddRelationShipQuesQuesOP.Designer.cs">
+      <DependentUpon>201812180436277_AddRelationShipQuesQuesOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291440230_AddRequiredInModel.cs" />
+    <Compile Include="Migrations\201812291440230_AddRequiredInModel.Designer.cs">
+      <DependentUpon>201812291440230_AddRequiredInModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291632061_AddRequiredInModelNew.cs" />
+    <Compile Include="Migrations\201812291632061_AddRequiredInModelNew.Designer.cs">
+      <DependentUpon>201812291632061_AddRequiredInModelNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812300845421_UpdateContNumString.cs" />
+    <Compile Include="Migrations\201812300845421_UpdateContNumString.Designer.cs">
+      <DependentUpon>201812300845421_UpdateContNumString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901061252562_AddRelationTrinerAssTriner.cs" />
+    <Compile Include="Migrations\201901061252562_AddRelationTrinerAssTriner.Designer.cs">
+      <DependentUpon>201901061252562_AddRelationTrinerAssTriner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901070822188_codeToExamCode.cs" />
+    <Compile Include="Migrations\201901070822188_codeToExamCode.Designer.cs">
+      <DependentUpon>201901070822188_codeToExamCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901081533016_AssignTabBatchTabRel.cs" />
+    <Compile Include="Migrations\201901081533016_AssignTabBatchTabRel.Designer.cs">
+      <DependentUpon>201901081533016_AssignTabBatchTabRel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901091025358_ExamScheTable.cs" />
+    <Compile Include="Migrations\201901091025358_ExamScheTable.Designer.cs">
+      <DependentUpon>201901091025358_ExamScheTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901101746239_AddBatchIdExamSchedule.cs" />
+    <Compile Include="Migrations\201901101746239_AddBatchIdExamSchedule.Designer.cs">
+      <DependentUpon>201901101746239_AddBatchIdExamSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901260439234_AddAdminLogin.cs" />
+    <Compile Include="Migrations\201901260439234_AddAdminLogin.Designer.cs">
+      <DependentUpon>201901260439234_AddAdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901260455392_AddRequiredDatainTable.cs" />
+    <Compile Include="Migrations\201901260455392_AddRequiredDatainTable.Designer.cs">
+      <DependentUpon>201901260455392_AddRequiredDatainTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExamSystemModel\ExamSystemModel.csproj">
+      <Project>{5c64ff95-df0a-4678-b77e-c07fe5cd4995}</Project>
+      <Name>ExamSystemModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812111721161_CreateDataBase.resx">
+      <DependentUpon>201812111721161_CreateDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812121102237_CreateCourseAssingTable.resx">
+      <DependentUpon>201812121102237_CreateCourseAssingTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812131440025_addLeadNormalTriner.resx">
+      <DependentUpon>201812131440025_addLeadNormalTriner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812140257197_relationshipAssTandTrainer.resx">
+      <DependentUpon>201812140257197_relationshipAssTandTrainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812140657325_addNewmigration.resx">
+      <DependentUpon>201812140657325_addNewmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812141634298_AddAssTriner.resx">
+      <DependentUpon>201812141634298_AddAssTriner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812160456360_AddPartiandTrainerAss.resx">
+      <DependentUpon>201812160456360_AddPartiandTrainerAss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812161321107_AddColumnOrganizationId.resx">
+      <DependentUpon>201812161321107_AddColumnOrganizationId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812161508059_AddExamColmn1.resx">
+      <DependentUpon>201812161508059_AddExamColmn1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812161522405_AddTableExamType.resx">
+      <DependentUpon>201812161522405_AddTableExamType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812161536495_AddTableExamTypeId.resx">
+      <DependentUpon>201812161536495_AddTableExamTypeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812161624142_UpdateExamDuration.resx">
+      <DependentUpon>201812161624142_UpdateExamDuration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812170337091_ExamtypeColmchange.resx">
+      <DependentUpon>201812170337091_ExamtypeColmchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812170829254_AddColmnInPaRtTrai.resx">
+      <DependentUpon>201812170829254_AddColmnInPaRtTrai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812170852305_QuestionAddModel.resx">
+      <DependentUpon>201812170852305_QuestionAddModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812171824598_deletecourseListTrainer.resx">
+      <DependentUpon>201812171824598_deletecourseListTrainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812180436277_AddRelationShipQuesQuesOP.resx">
+      <DependentUpon>201812180436277_AddRelationShipQuesQuesOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291440230_AddRequiredInModel.resx">
+      <DependentUpon>201812291440230_AddRequiredInModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291632061_AddRequiredInModelNew.resx">
+      <DependentUpon>201812291632061_AddRequiredInModelNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812300845421_UpdateContNumString.resx">
+      <DependentUpon>201812300845421_UpdateContNumString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901061252562_AddRelationTrinerAssTriner.resx">
+      <DependentUpon>201901061252562_AddRelationTrinerAssTriner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901070822188_codeToExamCode.resx">
+      <DependentUpon>201901070822188_codeToExamCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901081533016_AssignTabBatchTabRel.resx">
+      <DependentUpon>201901081533016_AssignTabBatchTabRel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901091025358_ExamScheTable.resx">
+      <DependentUpon>201901091025358_ExamScheTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901101746239_AddBatchIdExamSchedule.resx">
+      <DependentUpon>201901101746239_AddBatchIdExamSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901260439234_AddAdminLogin.resx">
+      <DependentUpon>201901260439234_AddAdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901260455392_AddRequiredDatainTable.resx">
+      <DependentUpon>201901260455392_AddRequiredDatainTable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
